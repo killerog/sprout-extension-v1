@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;700&display=swap');
+:root {
+    --background-primary: #fff;
+    --background-secondary: #f1f2f4;
+    --background-selection: #003866;
+    --accent: #0076d6;
+    --border: #808d98;
+    --text-primary: #32393e;
+    --text-secondary: #6a7681;
+    --text-selection: #fff;
+    --shadow: rgba(0, 56, 102, 0.25);
+    --translucent: rgba(255, 255, 255, 0.7);
+    --disabled: #8a8a8a;
+    --placeholder: #949494;
+    --inflow: #51841a;
+    --outflow: #de3607;
+    --flag-red: #FF3B30;
+    --flag-orange: #FF9500;
+    --flag-yellow: #FFCC00;
+    --flag-green: #34C759;
+    --flag-blue: #5FC8FA;
+    --flag-purple: #AF52DE;
+    --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --border-radius: 0.4em;
+}
+::selection {
+    background-color: var(--background-selection);
+    color: var(--text-selection);
+}
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--background-secondary);
+    border-radius: var(--border-radius);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: var(--border-radius);
+}
+::-webkit-input-placeholder, ::-moz-placeholder { /* Firefox 19+ */
+    color: var(--placeholder);
+}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) var(--background-secondary);
+}
+.App {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+}
+body {
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: initial;
+    margin: 0;
+    min-height: 583px;
+    width: 425px;
+}
+button {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: var(--accent);
+    color: var(--text-selection);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 1px 2px var(--shadow);
+}
+button.icon, button.link {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--text-primary);
+}
+button.icon {
+    display: flex;
+    align-items: center;
+}
+button.icon img {
+    height: 24px;
+    width: 24px;
+}
+button.link {
+    color: var(--accent);
+    font-size: 1em;
+    text-align: left;
+    text-decoration: underline;
+}
+button:disabled {
+    background-color: var(--background-secondary);
+    color: var(--disabled);
+    cursor: not-allowed;
+    box-shadow: inset 0 0 2px var(--shadow);
+}
+button.link {
+    padding: 0;
+    background-color: transparent;
+    color: var(--accent);
+    font-size: 1em;
+    text-align: left;
+    text-decoration: underline;
+}
+main:not(.main-view) {
+    height: 100vh;
+}
+h2 {
+    font-size: 0.75em;
+    margin: 0.75rem 0 0.25rem;
+    color: var(--background-selection);
+}
+select, input {
+    font-family: var(--font-family);
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    font-size: initial;
+    transition: border-color 0.1s;
+}
+select {
+    width: 100%;
+}
+input {
+    background-color: var(--background-primary);
+    width: calc(100% - 1.25rem);
+    color: var(--text-primary);
+}
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input:hover, input:active {
+    border-color: var(--text-secondary);
+}
+a {
+    color: var(--accent);
+    font-weight: 700;
+}
+aside {
+    background-color: var(--background-primary);
+    width: 70vw;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 8px 16px var(--shadow);
+    transition: opacity 0.1s, visibility 0.1s;
+}
+aside header {
+    display: block;
+}
+pre {
+    font-family: 'DM Mono', monospace;
+}
+.loader, .modal-container, .splash {
+    backdrop-filter: blur(0.5rem);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--translucent);
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s, visibility 0.1s;
+}
+.loader img, .lds-ellipsis, .splash img.error {
+    height: 80px;
+    width: 80px;
+}
+.splash {
+    backdrop-filter: none;
+    background-color: var(--background-secondary);
+}
+.hidden {
+    display: none;
+}
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: var(--text-primary);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-primary: #212121;
+        --background-secondary: #121315;
+        --background-selection: #b3cfe6;
+        --accent: #5b8eb9;
+        --border: #525d65;
+        --text-primary: #f1f2f4;
+        --text-secondary: #c1c8cd;
+        --text-selection: #212121;
+        --shadow: rgba(0, 0, 0, 0.75);
+        --translucent: rgba(0, 0, 0, 0.7);
+        --disabled: #636363;
+        --inflow: #6c9640;
+        --outflow: #e35e3b;
+        --flag-red: #FF3B30;
+        --flag-orange: #FF9500;
+        --flag-yellow: #FFCC00;
+        --flag-green: #34C759;
+        --flag-blue: #5FC8FA;
+        --flag-purple: #AF52DE;
+    }
+    input[type='date']::-webkit-calendar-picker-indicator, button.icon img, .loader img, .budgets ul li img {
+        filter: invert(1);
+    }
+    .light-theme {
+        --background-primary: #fff;
+        --background-secondary: #f1f2f4;
+        --background-selection: #003866;
+        --accent: #0076d6;
+        --border: #808d98;
+        --text-primary: #32393e;
+        --text-secondary: #6a7681;
+        --text-selection: #fff;
+        --shadow: rgba(0, 56, 102, 0.25);
+        --translucent: rgba(255, 255, 255, 0.7);
+        --disabled: #8a8a8a;
+        --placeholder: #949494;
+        --inflow: #51841a;
+        --outflow: #de3607;
+    }
+    .light-theme input[type='date']::-webkit-calendar-picker-indicator,
+    .light-theme button.icon img, .light-theme .loader img, .light-theme .budgets ul li img, button.icon img.no-invert {
+        filter: none;
+    }
+}
+@media (prefers-color-scheme: light) {
+    .dark-theme {
+        --background-primary: #212121;
+        --background-secondary: #121315;
+        --background-selection: #b3cfe6;
+        --accent: #5b8eb9;
+        --border: #525d65;
+        --text-primary: #f1f2f4;
+        --text-secondary: #c1c8cd;
+        --text-selection: #212121;
+        --shadow: rgba(0, 0, 0, 0.75);
+        --translucent: rgba(0, 0, 0, 0.7);
+        --disabled: #636363;
+        --placeholder: #6B6B6B;
+        --inflow: #6c9640;
+        --outflow: #e35e3b;
+    }
+    .dark-theme input[type='date']::-webkit-calendar-picker-indicator,
+    .dark-theme button.icon img, .dark-theme .loader img, .dark-theme .budgets ul li img {
+        filter: invert(1);
+    }
+    .dark-theme button.icon img.no-invert {
+        filter: none;
+    }
+}

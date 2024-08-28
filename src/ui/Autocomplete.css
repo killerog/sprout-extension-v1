@@ -1,0 +1,65 @@
+.autocomplete-field {
+    position: relative;
+}
+.autocomplete-field ul {
+    position: absolute;
+    max-height: 200px;
+    overflow-y: auto;
+    width: calc(100% - 2px);
+    background-color: var(--background-primary);
+    padding-inline-start: 0px;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    z-index: 1;
+    font-size: 0.9em;
+    box-shadow: 2px 2px 4px var(--shadow);
+    animation-name: autocomplete_open;
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+}
+.autocomplete-field ul div, .autocomplete-field ul li.no-match, .autocomplete-field ul div:first-child {
+    color: var(--background-selection);
+    font-weight: 700;
+}
+.autocomplete-field ul div {
+    padding: 1rem 0.5rem 0.25rem;
+}
+.autocomplete-field ul div:first-child {
+    padding-top: 0.5rem;
+}
+.autocomplete-field ul li.no-match {
+    padding: 0.5rem;
+}
+.autocomplete-field ul li {
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.autocomplete-field ul li .amount {
+    margin-left: 0.5rem;
+}
+.autocomplete-field ul li .positive {
+    color: var(--inflow);
+}
+.autocomplete-field ul li .negative {
+    color: var(--outflow);
+}
+.autocomplete-field ul li:hover:not(.no-match) {
+    background-color: var(--background-selection);
+}
+.autocomplete-field ul li:hover:not(.no-match), .autocomplete-field ul li:hover:not(.no-match) .positive, .autocomplete-field ul li:hover:not(.no-match) .negative {
+    color: var(--text-selection);
+}
+@keyframes autocomplete_open {
+    from {
+        opacity: 0;
+        transform: translateY(-5px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

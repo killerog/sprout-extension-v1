@@ -1,0 +1,64 @@
+.amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.amount .switch {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background-secondary);
+    box-shadow: inset 0px 0px 2px var(--shadow);
+    border-radius: 18px;
+    padding: 4px;
+}
+.amount .switch .thumb {
+    height: calc(100% - 4px);
+    background-color: var(--background-primary);
+    position: absolute;
+    transition: width 0.1s, left 0.1s;
+    box-shadow: 0px 1px 2px var(--shadow);
+    border-radius: 18px;
+    width: 86px;
+}
+.amount .switch .label {
+    padding: 1px 8px;
+    z-index: 1;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    width: 65px;
+}
+.amount .switch.outflow .thumb {
+    left: 2px;
+}
+.amount .switch.inflow .thumb {
+    left: 82px;
+}
+.amount .switch.outflow .label.inflow, .amount .switch.inflow .label.outflow {
+    color: var(--disabled);
+}
+.amount input {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3.5em;
+    border: none;
+    border-radius: 0;
+    margin-top: 1rem;
+}
+.amount input.inflow, .amount .switch.inflow .label.inflow {
+    /* border-color: var(--inflow); */
+    color: var(--inflow);
+}
+.amount input.outflow, .amount .switch.outflow .label.outflow {
+    /* border-color: var(--outflow); */
+    color: var(--outflow);
+}
+.currencySymbol {
+    margin: 0 0.25rem;
+    font-weight: 700;
+}

@@ -1,0 +1,54 @@
+.flag-selector {
+    display: flex;
+    align-items: center;
+    height: 42px;
+}
+.flag-selector button {
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 0.25rem solid;
+    margin: 0 0.125rem;
+}
+.flag-selector button:first-child {
+    margin-left: 0;
+}
+.flag-selector button:last-child {
+    margin-right: 0;
+}
+.flag-selector .red-flag {
+    border-color: var(--flag-red);
+}
+.flag-selector .red-flag.selected {
+    background-color: var(--flag-red);
+}
+.flag-selector .orange-flag {
+    border-color: var(--flag-orange);
+}
+.flag-selector .orange-flag.selected {
+    background-color: var(--flag-orange);
+}
+.flag-selector .yellow-flag {
+    border-color: var(--flag-yellow);
+}
+.flag-selector .yellow-flag.selected {
+    background-color: var(--flag-yellow);
+}
+.flag-selector .green-flag {
+    border-color: var(--flag-green);
+}
+.flag-selector .green-flag.selected {
+    background-color: var(--flag-green);
+}
+.flag-selector .blue-flag {
+    border-color: var(--flag-blue);
+}
+.flag-selector .blue-flag.selected {
+    background-color: var(--flag-blue);
+}
+.flag-selector .purple-flag {
+    border-color: var(--flag-purple);
+}
+.flag-selector .purple-flag.selected {
+    background-color: var(--flag-purple);
+}

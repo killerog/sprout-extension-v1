@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Options - Sprout for YNAB</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='options.css'>
+</head>
+<body>
+    <main>
+        <section id="settings">
+            <h1>Settings</h1>
+            <h2>Show/Hide Balances & Totals</h2>
+            <div class="setting-row">
+                <p>Show or hide account and/or category balances/totals from autocomplete.</p>
+                <select id="balance-select">
+                    <option value="show-all">Show all</option>
+                    <option value="show-account">Show Account only</option>
+                    <option value="show-category">Show Category only</option>
+                    <option value="hide-all">Hide all</option>
+                </select>
+            </div>
+            <h2>Theme</h2>
+            <div class="setting-row">
+                <p>Match system will follow whatever theme is set on your system (if supported).</p>
+                <select id="theme-select">
+                    <option value="system">Match system</option>
+                    <option value="light">Light theme</option>
+                    <option value="dark">Dark theme</option>
+                </select>
+            </div>
+            <h2>Save last accessed budget</h2>
+            <div class="setting-row">
+                <p>Save your last opened budget. If this is enabled, Sprout for YNAB will automatically open to the budget you last opened. This will save the ID and name of your last opened budget in storage.</p>
+                <select id="last-budget-select">
+                    <option value="false">Don't save</option>
+                    <option value="true">Save</option>
+                </select>
+            </div>
+            <h2>Data cache duration</h2>
+            <div class="setting-row">
+                <p>Set how many hours to temporarily save your budget information for faster loading before refreshing from YNAB.</p>
+                <input id="cache-length" type="number" step="0.01" min="0">
+            </div>
+            <h2>Clear cached data</h2>
+            <div class="setting-row">
+                <p>The last accessed budget and any budget information currently cached will be erased and will be refreshed next time you open Sprout for YNAB. Data cached will include budget IDs, names, and each budget's respective settings, accounts, payees and categories.</p>
+                <button id="data-clear" class="danger">Clear data</button>
+            </div>
+            <h2>Disconnect from Sprout for YNAB</h2>
+            <div class="setting-row">
+                <p>Disconnect your YNAB account and clear all data from Sprout for YNAB.</p>
+                <button id="logout" class="danger">Disconnect</button>
+            </div>
+        </section>
+        <section id="logged-out" class="hidden">
+            <p>Your YNAB account has been disconnected from Sprout for YNAB. Thank you for using Sprout for YNAB!</p>
+            <p>To deauthorize Sprout for YNAB from your account, go to your <a href="https://app.youneedabudget.com/settings" target="_blank" rel="noopener noreferrer">YNAB Account Settings</a>, scroll down to Authorized Applications and click Revoke on Sprout for YNAB.</p>
+        </section>
+        <section id="about">
+            <h1>About</h1>
+            <p>&copy; 2021-2024. Sprout for YNAB is not affiliated with YNAB.</p>
+            <p>Version 1.1.4 <a href="[WEBSITE_URL]/updates" target="_blank" rel="noopener noreferrer">(View changelog)</a></p>
+            <ul class="links">
+                <li>
+                    <a href="acknowledgements.html" target="_blank" rel="noopener noreferrer">Acknowledgements</a>
+                </li>
+                <li>
+                    <a href="[WEBSITE_URL]/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+<script src="options.js"></script>
+</html>

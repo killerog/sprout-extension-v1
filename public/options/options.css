@@ -1,0 +1,106 @@
+:root {
+    --accent: #0060df;
+    --danger: #CA481D;
+    --text-primary: #000;
+    --text-secondary: #757575;
+    --border: #949494;
+    --border-radius: 0.4em;
+}
+html, body, select, input, option {
+    color: var(--text-primary);
+}
+body {
+    margin: 0;
+    font-size: 15px;
+}
+main {
+    padding: 0.5rem 1rem 1rem;
+}
+a {
+    color: var(--accent);
+}
+select, button, input {
+    font-size: 1em;
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+}
+button {
+    font-weight: 700;
+    color: var(--accent);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+button.danger {
+    color: var(--danger);
+}
+button:disabled {
+    color: var(--border);
+    cursor: not-allowed;
+}
+button:active {
+    background-color: var(--border);
+}
+select {
+    padding: 0.5rem 0.25rem;
+}
+input {
+    text-align: right;
+    padding: 0.5rem 0.25rem;
+    width: 48px;
+    margin-left: auto;
+}
+section {
+    margin: 0;
+}
+h1 {
+    font-size: 1.25em;
+    margin: 1rem 0;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
+#settings .setting-row {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr auto;
+}
+#settings h1 {
+    margin-top: 0;
+}
+#settings h2 {
+    font-size: 1em;
+    margin: 1em 0 0;
+}
+#settings p {
+    color: var(--text-secondary);
+    font-size: small;
+    margin: 0;
+}
+#settings select, #settings button, #settings input {
+    height: fit-content;
+    margin: auto;
+}
+#about {
+    font-size: 0.9em;
+}
+#about .links {
+    list-style-type: none;
+    padding: 0;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --accent: #6694cc;
+        --danger: #e56f48;
+        --text-primary: #fff;
+        --text-secondary: #909090;
+        --border: #737373;
+    }
+    html, option {
+        background-color: #2a2a2a;
+    }
+}
