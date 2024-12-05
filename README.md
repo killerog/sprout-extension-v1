@@ -11,7 +11,7 @@ Sprout for YNAB is a browser extension that allows a YNAB (You Need a Budget) us
 
 ## Install
 ```
-npm run install
+npm install
 ```
 
 ## Setup
@@ -19,7 +19,7 @@ npm run install
 - On https://app.ynab.com, go to Settings -> Developer Settings and create a new OAuth application. 
   - Do not enable default budget selection
   - Don't worry about adding redirect URI(s) at this point
-- Save the app and copy the client ID and replace `[CLIENT_ID]` in .env (`REACT_APP_CLIENT_ID`) with the client ID
+- Save the app and copy the client ID and replace `[CLIENT_ID]` in .env.default (`REACT_APP_CLIENT_ID`) with the client ID and save it as .env
 
 ### Worker URL
 Change any references to `[WORKER_URL]` in the code to the worker's URL
