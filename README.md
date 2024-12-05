@@ -25,8 +25,6 @@ npm install
 Change any references to `[WORKER_URL]` in the code to the worker's URL
 
 - .env (`REACT_APP_AUTHORIZATION_URL`)
-- manifest-v3.json (`extension_pages` in `content_security_policy`)
-  - Should not include a pathname (`https://domain.com`, not `https://domain.com/api`)
 
 `http://localhost:8787` is the default address for the worker in local mode
 

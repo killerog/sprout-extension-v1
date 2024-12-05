@@ -1,0 +1,22 @@
+{
+  "name": "Sprout for YNAB",
+  "version": "2.0.0.0",
+  "description": "An extension for YNAB that allows users to quickly add a transaction to their budget.",
+  "icons": {
+    "16": "assets/logos/logo-16.png",
+    "48": "assets/logos/logo-48.png",
+    "128": "assets/logos/logo-128.png"
+  },
+  "permissions": ["cookies", "storage", "*://localhost/*", "*://*.[WEBSITE_URL]/*"],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": ["authenticate/index.html"],
+  "manifest_version": 2,
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "115.0"
+    }
+  }
+}
