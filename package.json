@@ -12,7 +12,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "npm run build:v3 && npm run build:v2",
-    "build:v3": "cp manifests/manifest-v3.json public/manifest.json && BUILD_PATH='./build/v3' react-scripts build",
+    "build:v3": "cp manifests/manifest-v3.json public/manifest.json && BUILD_PATH='./build/v3' react-scripts build && node fix-paths.js ./build/v3",
     "build:v2": "cp manifests/manifest-v2.json public/manifest.json && BUILD_PATH='./build/v2' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
