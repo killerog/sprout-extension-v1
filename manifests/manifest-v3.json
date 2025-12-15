@@ -18,6 +18,9 @@
       "matches": ["https://*.ynab.com/*"]
     }
   ],
+  "action": {
+    "default_popup": "index.html"
+  },
   "options_ui": {
     "page": "options/options.html",
     "open_in_tab": true
