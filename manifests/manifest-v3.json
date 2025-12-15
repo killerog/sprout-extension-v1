@@ -7,7 +7,7 @@
     "48": "assets/logos/logo-48.png",
     "128": "assets/logos/logo-128.png"
   },
-  "permissions": ["cookies", "storage"],
+  "permissions": ["activeTab", "cookies", "identity", "storage"],
   "manifest_version": 3,
   "minimum_chrome_version": "102",
   "offline_enabled": false,

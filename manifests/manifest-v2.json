@@ -7,7 +7,7 @@
     "48": "assets/logos/logo-48.png",
     "128": "assets/logos/logo-128.png"
   },
-  "permissions": ["cookies", "storage", "*://localhost/*", "*://*.[WEBSITE_URL]/*"],
+  "permissions": ["cookies", "identity", "storage", "*://localhost/*", "*://*.[WEBSITE_URL]/*"],
   "options_ui": {
     "page": "options/options.html",
     "open_in_tab": true
